@@ -21,6 +21,7 @@ class ArticlesController < ApplicationController
 
   # POST /articles
   def create
+    # raise
     @article = Article.new(article_params)
 
     if @article.save
@@ -53,6 +54,6 @@ class ArticlesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def article_params
-      params.require(:article).permit(:title, :body)
+      params.require(:article).permit(:title, :body, :photo)
     end
 end
